@@ -1,31 +1,40 @@
-<div class="jumbotron">
-	<h2>Post</h2>
-	<p class="lead">
-		<a href="{{post.url}}" target="_blank">{{post.title}}</a>
-	</p>
-	
-	<h3>Comments</h3>
+<h2>Post</h2>
+<p class="lead">
+	<a href="{{post.url}}" target="_blank">{{post.title}}</a>
+</p>
 
-	<ul>
-		<li ng-repeat="comment in comments">
-			{{ comment.text }}
-			<br>
-			Posted by:
-			<a ng-href="#/users/{{ comment.creatorUID }}">
-				{{ comment.creator }}
-			</a>
-		</li>
-	</ul>
+<p>
+	<a ng-href="#/posts" class="btn btn-default">
+		<i class="glyphicon glyphicon-chevron-left"></i>
+		Back to Posts
+	</a>
+</p>
 
-	<form ng-show="signedIn()" ng-submit="addComment()">
-		<textarea ng-model="commentText"></textarea>
-		<button>Submit</button>
-	</form>
-
-	<p>
-		<a ng-href="#/posts" class="btn btn-default">
-			<i class="glyphicon glyphicon-chevron-left"></i>
-			Back to Posts
-		</a>
-	</p>
+<h3>Comments</h3>
+<div class="row">
+	<div class="col-md-8 col-lg-6">
+		<ul class="comments">
+			<li ng-repeat="comment in comments">
+				<p>
+					{{ comment.text }}
+				</p>
+				<p>
+					<small>
+						Posted by:
+						<a ng-href="#/users/{{ comment.creatorUID }}">
+							{{ comment.creator }}
+						</a>
+					</small>
+				</p>
+			</li>
+		</ul>
+		<form ng-show="signedIn()" ng-submit="addComment()">
+			<textarea ng-model="commentText" class="form-control"></textarea>
+			<div class="row">
+				<div class="col-lg-12">
+					<button class="btn btn-success pull-right">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>

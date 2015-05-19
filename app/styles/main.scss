@@ -114,6 +114,17 @@ dt, dd {
     margin-bottom: 1rem;
 }
 
+ul.comments {
+    list-style: none;
+    padding-left: 0;
+    
+    li {
+        border-bottom: 1px solid $secondary-color;
+        padding: 0.5rem 0;
+        margin: 0.5rem 0;
+    }
+}
+
 
 
 // # Global Components
@@ -128,6 +139,20 @@ dt, dd {
 
 form {
     margin-bottom: 2rem;
+
+    .form-control {
+        margin-bottom: .5rem;
+    }
+
+    button {
+        margin-top: 1rem;
+    }
+
+    textarea {
+        resize: none;
+        border-radius: 8px;
+        min-height: 8rem;
+    }
 }
 
 
