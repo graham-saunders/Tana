@@ -1,0 +1,39 @@
+<h2>Posts</h2>
+
+<ul class="list-unstyled">
+	<li ng-repeat="post in posts">
+		<a ng-href="#/post/{{ post.$id }}">
+			{{ post.title }} |
+		</a>
+		<a ng-href="{{ post.url }}" target="_blank">
+			{{ post.url | HostnameFilter }}
+		</a>
+		<span ng-show="user.uid === post.creatorUID">
+			<a ng-click="deletePost(post)" class="pull-right">
+				<i class="glyphicon glyphicon-trash"></i>
+			</a>
+			<a ng-click="editPost(post)" class="pull-right">
+				<i class="glyphicon glyphicon-pencil"></i>
+			</a>
+			<a ng-href="#/post/{{ post.$id }}" class="pull-right">
+				<i class="glyphicon glyphicon-comment"></i>
+			</a>
+		</span>
+	</li>
+</ul>
+
+<p><a ng-href="#/add">New Post</a></p>
+<!-- <form ng-submit="updatePost()">
+		<input type="text" ng-model="editPost.title">
+		<input type="url" ng-model="editPost.url">
+		<button class="btn btn-default">Update</button>
+</form> -->
+<!-- <dl>
+		<dt>Posts:</dt>
+		<dd ng-repeat="post in posts">
+			Title: {{post.title}} <br>
+			URL: {{post.url}}
+		</dd>
+		<dt>Post:</dt>
+		<dd>{{post}}</dd>
+</dl> -->

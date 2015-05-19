@@ -1,0 +1,206 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+
+// # Structure:
+// 
+// 1. Variables
+// 2. Base Components
+//      1. Layout
+//      2. Typeography
+// 3. 
+
+
+
+// # Variables & Mixins
+// ====================
+
+$primary-color    : #337AB7;
+$secondary-color  : #f5f5f5;
+
+$footer-height    : 3rem;
+
+@mixin hover($color, $bg:"") {
+    @if $bg == "true" {
+        background: $color;
+        &:hover {
+            background: darken($color, 10%);
+        }
+    } @else {
+        color: $color;
+        &:hover {
+            color: darken($color, 10%);
+        }
+    }
+}
+
+
+// # Base Components
+// =================
+//
+// This is where the general SASS goes that will be used
+// globally, like body, header, footer, wrapper, etc.
+
+html, body {
+  font-size: 16px;
+  height: 100%;
+}
+
+.container {
+    max-width: 960px;
+}
+
+// Layout
+// ----------
+.wrapper {
+    min-height: 100%;
+    margin-bottom: - $footer-height;
+    position: relative;
+
+    &:after {
+        content: '';
+        display: block;
+        height: $footer-height;
+    }
+}
+
+footer {
+    height: $footer-height;
+    position: relative;
+    bottom: 0;
+}
+
+
+// Typography
+// ----------
+
+a {
+    transition: .2s ease;
+
+    &:hover {
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+
+
+.container .glyphicon {
+    color: #aaa;
+    margin: 0 1rem;    
+    text-align: right;
+
+    &:hover {
+        color: #777;
+    }
+}
+
+
+// Lists
+// ----------
+
+ul, ol, dl {
+    margin-bottom: 2rem;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+
+    .navbar & {
+        margin-bottom: 0;
+    }
+}
+
+dt, dd {
+    margin-bottom: 1rem;
+}
+
+
+
+// # Global Components
+// ===================
+//
+// Components like buttons, forms, panels, cards,
+// tables and other things can go here.
+
+
+// Forms
+// -----
+
+form {
+    margin-bottom: 2rem;
+}
+
+
+// Tables
+// ------
+
+table {
+    // Code here
+}
+
+
+
+
+
+// # Stand-alone Modules
+// =====================
+//
+// Things like sections, or page specific components and
+// modules will go here.
+
+
+// Main Navigation
+// ---------------
+
+.navbar-default, .navbar {
+    background: $primary-color;
+    border-radius: 0;
+    border: none;
+
+    .navbar-toggle {
+        border: none;
+
+        .icon-bar {
+            background: #fff;
+        }
+
+        &:hover, &:focus, &:active {
+            background: none;
+        }
+    }
+
+    .navbar-collapse {
+        border: none;
+        box-shadow: none;
+    }
+
+    @media screen and (min-width: 768px) {
+        .navbar-collapse {
+            float: right;
+        }
+    }
+
+    &, li, a, .navbar-brand, 
+    .navbar-nav > li > a {
+        color: #fff;
+
+        &:hover {
+            color: #ddd;
+        }
+    }
+}
+
+
+// Homepage Hero
+// -------------
+
+section.hero {
+  background: $secondary-color;
+}
+
+
+
+
+
+
+

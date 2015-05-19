@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tana</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body ng-app="TanaApp">
+
+
+        <div class="wrapper">
+            <header ng-include="'shared/nav.html'"></header>
+        
+            <main class="container" ng-view="" role="main"></main>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p>Built with <span class="glyphicon glyphicon-heart"></span> by Graham Saunders</p>
+            </div>
+        </footer>
+
+
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/firebase/firebase.js"></script>
+        <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+        <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
+        <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+        <script src="scripts/app.js"></script>
+
+        <!-- Services -->
+        <script src="scripts/services/AuthService.js"></script>
+        <script src="scripts/services/PostService.js"></script>
+        <script src="scripts/services/UserService.js"></script>
+        
+        <!-- Filters -->
+        <script src="scripts/filters/HostnameFilter.js"></script>
+
+        <!-- Controllers -->
+        <script src="scripts/controllers/HomeCtrl.js"></script>
+        <script src="scripts/controllers/AddCtrl.js"></script>
+        <script src="scripts/controllers/CommentsCtrl.js"></script>
+        <script src="scripts/controllers/LoginCtrl.js"></script>
+        <script src="scripts/controllers/NavCtrl.js"></script>
+        <script src="scripts/controllers/PostsCtrl.js"></script>
+        <script src="scripts/controllers/UserCtrl.js"></script>
+    </body>
+</html>

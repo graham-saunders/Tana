@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default" role="navigation">
+	
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#/">
+			Tana
+		</a>
+	</div>
+	
+	<div ng-controller="NavCtrl" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-left navbar-nav">
+			<li ng-show="signedIn()">
+				<a ng-href="#/users/{{ user.uid }}">
+					{{ user.profile.username }}
+				</a>
+			</li>
+			<li ng-hide="signedIn()">
+				<a ng-href="#/register">Register</a>
+			</li>
+			<li ng-hide="signedIn()">
+				<a ng-href="#/login">Login</a>
+			</li>
+			<li ng-show="signedIn()">
+				<a ng-click="logout()">Logout</a>
+			</li>
+		</ul>
+	</div>
+</nav>

@@ -1,0 +1,31 @@
+<div class="jumbotron">
+	<h2>Post</h2>
+	<p class="lead">
+		<a href="{{post.url}}" target="_blank">{{post.title}}</a>
+	</p>
+	
+	<h3>Comments</h3>
+
+	<ul>
+		<li ng-repeat="comment in comments">
+			{{ comment.text }}
+			<br>
+			Posted by:
+			<a ng-href="#/users/{{ comment.creatorUID }}">
+				{{ comment.creator }}
+			</a>
+		</li>
+	</ul>
+
+	<form ng-show="signedIn()" ng-submit="addComment()">
+		<textarea ng-model="commentText"></textarea>
+		<button>Submit</button>
+	</form>
+
+	<p>
+		<a ng-href="#/posts" class="btn btn-default">
+			<i class="glyphicon glyphicon-chevron-left"></i>
+			Back to Posts
+		</a>
+	</p>
+</div>
