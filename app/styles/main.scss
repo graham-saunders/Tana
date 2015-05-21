@@ -140,11 +140,17 @@ ul.comments {
 form {
     margin-bottom: 2rem;
 
+    &.form-inline {
+        button, .btn {
+            margin-top: 0;
+        }
+    }
+
     .form-control {
         margin-bottom: .5rem;
     }
 
-    button {
+    button, .btn {
         margin-top: 1rem;
     }
 

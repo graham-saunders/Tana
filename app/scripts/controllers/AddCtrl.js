@@ -13,6 +13,7 @@
 		$scope.signedIn = Auth.signedIn;
 		$scope.logout = Auth.logout;
 		$scope.user = Auth.user;
+		$scope.title = "Add a Post";
 
 		$scope.createPost = function () {
 			$scope.post.creator = $scope.user.profile.username;
